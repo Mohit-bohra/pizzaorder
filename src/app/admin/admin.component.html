@@ -1,0 +1,38 @@
+<div class='card-header'>
+       
+    <img src="https://corporate.dominos.co.uk/Media/Default/Image%20Library/Image%20library%20-%20logos/RGB_White_Type_Tile_Only.png" width="50px" height="50px">
+   <div class='title'> <h1>Welcome To Dominos</h1></div> 
+  </div>
+<table class="table">
+        <thead>
+               <h2> Pizza List : </h2>&nbsp;
+            <tr>
+                
+                <th>Pizza Id</th>
+                <th>Pizza Name</th>
+                <th>Pizza Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                 <td> <a routerLink="/admin/addProd">Add New Pizza</a></td>
+                 
+            </tr>
+               
+        <tr *ngFor='let product of products'  (click)="onSelection(product)" >
+                
+        <td class>{{product.productId}}</td>
+        <td class>{{product.productName}}</td>
+        <td>{{product.price}}</td>
+        <td> <a routerLink="/admin/delete/{{product.productId}}">Delete</a></td>
+        
+        <td><button ><div>Update</div></button></td>
+        </tr>
+        </tbody>
+        
+    </table>
+
+    <div *ngIf="selectedProd" class="selectedProd">
+            <app-update [product]="selectedProd"></app-update>
+          </div>
+    

@@ -1,0 +1,63 @@
+<p>add works!</p>
+<div class="container">
+        <form [formGroup]="angForm" novalidate>
+        
+        
+        
+        <div class="form-group">
+            <label for="PizzaId" class="col-md-4">Pizza Id</label>
+            <input type="text" class="form-control" formControlName="productId" #productId>
+            
+        </div>
+        <div class="alert alert-danger" *ngIf="angForm.controls['productId'].invalid && 
+        (angForm.controls['productId'].dirty || angForm.controls['productId'].touched)">
+        <div *ngIf="angForm.controls['productId'].errors.required">
+            Pizza ID must be entered
+        </div></div>
+        
+        
+        
+        
+        <div class="form-group">
+              <label for="productName" class="col-md-4">Pizza Name</label>
+              <input type="text" class="form-control" formControlName="productName" #productName>
+        </div>
+        <div class="alert alert-danger" *ngIf="angForm.controls['productName'].invalid && 
+        (angForm.controls['productName'].dirty || angForm.controls['productName'].touched)">
+        <div *ngIf="angForm.controls['productName'].errors.required">
+            Pizza Name must be entered
+        </div></div>
+        
+        <!-- <div class="form-group">
+            <label for="Available" class="col-md-4">Available</label>
+            <input type="text" class="form-control" formControlName="Available" #Available>
+      </div>
+      <div class="alert alert-danger" *ngIf="angForm.controls['Available'].invalid && 
+      (angForm.controls['Available'].dirty || angForm.controls['Available'].touched)">
+      <div *ngIf="angForm.controls['Available'].errors.required">
+        Availablity must be entered
+      </div></div>
+         -->
+        
+        <div class="form-group">
+             <label for="price" class="col-md-4">Price</label>
+             <input type="text" class="form-control" formControlName="price" #price>
+        </div>   
+        <div class="alert alert-danger" *ngIf="angForm.controls['price'].invalid && 
+        (angForm.controls['price'].dirty || angForm.controls['price'].touched)">
+        <div *ngIf="angForm.controls['price'].errors.required">
+            Pizza Price must be entered
+        </div></div>
+        
+        
+        
+        
+        <div class="form-group">
+            <button (click)="addPizza(productId.value,productName.value,price.value)"
+            [disabled]="angForm.invalid || angForm.pristine"
+            class="btn btn=primary">
+                Add Pizza
+            </button>
+        </div>
+        </form>
+        </div>

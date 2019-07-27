@@ -1,0 +1,22 @@
+
+<table class="table-responsive">
+                <thead>
+                        Your Order: &nbsp;
+                    <tr>
+                        
+                        <th>Pizza Id</th>
+                        <th>Pizza Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                <tr *ngFor='let product of products'>
+                        
+                <td class>{{product.productId}}</td>
+                <td class>{{product.productName}}</td>
+                <a routerLink="delete">Delete</a>
+                </tr>
+                </tbody>
+            
+            </table>
+            

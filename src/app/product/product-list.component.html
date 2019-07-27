@@ -1,0 +1,78 @@
+<div class='card'>
+    <div class='card-header'>
+       
+      <img src="https://corporate.dominos.co.uk/Media/Default/Image%20Library/Image%20library%20-%20logos/RGB_White_Type_Tile_Only.png" width="50px" height="50px">
+     <div class='title'> <h1>{{pageTitle}}</h1></div> 
+    </div>
+    <div class='card-body'>
+        <div class='row'>
+            <div class='col-md-2'>Sort by:</div>
+            <div class='col-md-4'>
+                <input type='text'
+                [(ngModel)]='listFilter'/>
+            </div>
+        </div>
+        <div class='row'>
+            <div class='col-md-6'>
+                <h4>Sorted By:{{listFilter}}</h4>
+            
+            </div>
+        </div>
+    <div class='table-hover'>
+        <table class='table'
+         *ngIf='products && products.length'>
+
+            <thead>
+                <tr>
+                    <th>
+                            <a routerLink="product/order">Show Order</a>
+                    </th>
+                
+                
+                    <th>Pizza Id</th>
+                    <th>Pizza Name</th>
+                    <th>Available</th>
+                    <th>Price</th>
+                    <th>Spicy</th>
+                    <th>Category</th>
+                </tr>
+            </thead>
+            <tbody>
+                    <tr *ngFor='let product of filteredProducts'>
+                        <td>
+                            <img [src]='imageURL'
+                            [title]='product.productName'
+                            [style.width.px]='imageWidth'>
+                        </td>
+                     <td>{{product.productId}}</td>
+                     <td>{{product.productName}}</td>
+                     <td>{{product.Available}}</td>
+                     <td>{{product.price | currency:'INR':'symbol':'1.2-2'}}</td>
+                     <td>{{product.Spicy}}</td>
+                     <td>{{product.category}}</td>
+                     <input type="checkbox" name="product" data-md-icheck (change)="toggleVisibility(product)"/>
+                    </tr>
+                    
+                     
+                    
+                       
+                    
+
+            </tbody>
+        </table>
+        
+              
+                        
+                    
+                     
+                    
+        
+    </div>
+    
+    
+    </div>
+</div>
+
+
+        
+

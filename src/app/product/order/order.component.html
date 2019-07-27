@@ -1,0 +1,21 @@
+
+<table class="table">
+    <thead>
+            Your Cart: &nbsp;
+        <tr>
+            
+            <th>Pizza Id</th>
+            <th>Pizza Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+    <tr *ngFor='let product of products'>
+            
+    <td class>{{product.productId}}</td>
+    <td class>{{product.productName}}</td>
+   <td> <a routerLink="delete">Delete</a></td>
+    </tr>
+    </tbody>
+
+</table>

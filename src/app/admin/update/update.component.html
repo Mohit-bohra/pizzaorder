@@ -1,0 +1,13 @@
+
+<div class="container">
+        <div class="row" >
+             <input type="text" name="designation" [(ngModel)]="product.productId"/>
+             <input type="text" name="designation" [(ngModel)]="product.productName"/>
+             <input type="text" name="designation" [(ngModel)]="product.price"/>
+             <div class="col-md-2">
+                 <button (click)="updateProduct(product.productId,product.price)">Update</button>
+             </div>    
+         </div>
+     
+     </div>
+         
